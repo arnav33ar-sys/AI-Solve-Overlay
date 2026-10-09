@@ -229,7 +229,7 @@ class OverlayService : Service() {
                 val body = json.toString().toRequestBody("application/json".toMediaType())
                 
                 val request = Request.Builder()
-                    .url(f"{backendUrl}/api/solve")
+                    .url("$backendUrl/api/solve")
                     .post(body)
                     .build()
 
@@ -240,14 +240,14 @@ class OverlayService : Service() {
                             val jsonObj = JSONObject(respString)
                             tvAnswer.text = jsonObj.optString("answer", "No answer found.")
                         } else {
-                            tvAnswer.text = f"Server Error: {response.code}\n{respString}"
+                            tvAnswer.text = "Server Error: ${response.code}\n$respString"
                         }
                         stopCapture()
                     }
                 }
             } catch (e: Exception) {
                 withContext(Dispatchers.Main) {
-                    tvAnswer.text = f"Network Error: {e.message}"
+                    tvAnswer.text = "Network Error: ${e.message}"
                     stopCapture()
                 }
             }
@@ -274,7 +274,7 @@ class OverlayService : Service() {
         super.onDestroy()
         stopProjection()
         scope.cancel()
-        if (hasattr(this, 'overlayView') && overlayView != null) {
+        if (::overlayView.isInitialized) {
             windowManager.removeView(overlayView)
         }
     }
