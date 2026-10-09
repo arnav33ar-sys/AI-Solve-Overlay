@@ -26,7 +26,7 @@
 
         <activity
             android:name=".CaptureActivity"
-            android:theme="@style/Theme.AppCompat.Transparent.NoActionBar"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:excludeFromRecents="true"
             android:exported="false" />
 
