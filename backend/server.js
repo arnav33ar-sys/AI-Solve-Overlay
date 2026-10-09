@@ -21,8 +21,7 @@ app.post('/api/solve', async (req, res) => {
             return res.status(400).json({ error: 'No image provided' });
         }
 
-        gemini-2.5-flash:
-const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" })
+        const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
         const prompt = `Read the visible question from the selected screenshot. Recognize printed mathematics, science, multiple-choice questions, and ordinary text where legible. Explain the answer in simple, clear steps. Include the final answer prominently. State when the image is unclear rather than inventing missing information. Support Hindi and English questions.`;
 
         const image = {
