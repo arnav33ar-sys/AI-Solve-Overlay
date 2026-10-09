@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/overlay_root"
+    android:layout_width="320dp"
+    android:layout_height="wrap_content"
+    android:background="#E6121212"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/drag_handle"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="#333333"
+        android:gravity="center"
+        android:text="= DRAG TO MOVE ="
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btn_close"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#D32F2F"
+        android:text="CLOSE NOW"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btn_capture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#1976D2"
+        android:text="CAPTURE SCREEN &amp; SOLVE"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/btn_stop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#F57C00"
+        android:text="STOP CAPTURE"
+        android:textColor="#FFFFFF"
+        android:visibility="gone" />
+        
+    <Button
+        android:id="@+id/btn_retry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#388E3C"
+        android:text="RETRY"
+        android:textColor="#FFFFFF"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:id="@+id/tv_answer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ready to capture. Note: Some secure apps may block capture."
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+    </ScrollView>
+</LinearLayout>
